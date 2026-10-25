@@ -1,6 +1,6 @@
-# BRÚJULA DIGITAL · Opción 2
+# Brújula Digital
 
-Recurso educativo multimedia bilingüe (ES/EN) para bienestar digital.
+Recurso educativo multimedia bilingüe (ES/EN) sobre bienestar digital para estudiantes universitarios. Cinco módulos (Atención, Sueño, Movimiento, Redes y Gestión del tiempo), diez pantallas y una interacción en cada una.
 
 ## Estructura
 
@@ -12,7 +12,8 @@ Recurso educativo multimedia bilingüe (ES/EN) para bienestar digital.
 ├── assets/
 │   ├── app.js
 │   ├── styles.css
-│   └── *.svg
+│   ├── compass.svg, compass-light.svg
+│   └── *.svg            (ilustraciones)
 └── pages/
     ├── 01-atencion-foco.html
     ├── 02-atencion-notificaciones.html
@@ -26,4 +27,19 @@ Recurso educativo multimedia bilingüe (ES/EN) para bienestar digital.
     └── 10-organizacion-contrato.html
 ```
 
+## Uso
+
 Abre `index.html` en un servidor web estático para ejecutar la experiencia completa.
+
+## Criterios de diseño
+
+- **Tipografía única:** se define en `--font` (`assets/styles.css`).
+- **Paleta monocromática:** variaciones del morado base `#6849df` (`--purple`, `--purple-dark`, `--purple-mid`, `--purple-soft`, `--purple-tint`) y neutros con matiz morado.
+- **Sin emojis** en ilustraciones ni interfaz; los módulos se identifican por nombre, número e ilustración.
+- **Bilingüe:** cada texto lleva `data-es` y `data-en`; el idioma se guarda entre visitas.
+- **Referencias:** formato autor, año, título y enlace o DOI, igual en las pantallas y en `creditos.html`.
+
+## Cómo agregar o ajustar interacciones
+
+- Control deslizante: `data-range` con `data-range-kind="noise"` o `"movement"` define los mensajes (`setupRange` en `assets/app.js`).
+- Cuestionarios, tarjetas, temporizador, lista y contrato: ver las funciones `setup*` de `assets/app.js`.
